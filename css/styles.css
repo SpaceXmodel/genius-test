@@ -36,12 +36,15 @@
 --color-brand-dark: #465929;
 --color-brand-normal: #819b57;
 --color-brand-light: #cfcfbc;
+}
 
 /* #A28268 */
 
 
 /* Base */
-* {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
 
@@ -63,6 +66,10 @@ h5,
 h6,
 p {
 margin-top: 0;
+}
+
+.a {
+display: inline-block;
 }
 
 address {
@@ -249,6 +256,21 @@ max-width: 340px;
   content: '';
 }
 
+.chefs-list {
+display: flex;
+flex-wrap: wrap;
+gap: 40px 30px;
+
+}
+
+.chefs-item {
+flex-basis: calc((100% - 30px) / 2);
+}
+.chef-card {
+  display: flex;
+  gap: 30px;
+}
+
 .chef-photo {
 border-radius: 4px 4px 4px 200px;
 box-shadow:-16px 16px 0 0 var(--color-primary-light), -16px 16px 0 2px var(--color-secondary-dark);
@@ -261,11 +283,25 @@ box-shadow:-16px 16px 0 0 var(--color-primary-light), -16px 16px 0 2px var(--col
   font-weight: 600;
 }
 
+.chef-text p {
+margin-bottom: 24px;
+}
 
+.chef-text p:last-child {
+margin-bottom: 0;
+}
 
 
 
 /* Formats section */
+
+.formats-container {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+
+}
+
 .format-item {
   flex-basis: calc((100% - 40px) / 3);
   flex-wrap: wrap;
@@ -305,13 +341,77 @@ box-shadow:-16px 16px 0 0 var(--color-primary-light), -16px 16px 0 2px var(--col
   font-size: 14px;
   font-weight: 300;
 }
-  /* Contact section */
+/* Carousel */
+.carousel-button {
+display: flex;
+align-items: center;
+justify-content: center;
+flex-shrink: 0;
+width: 44px;
+height: 44px;
+padding: 0;
+fill: var(--color-primary-dark);
+background-color: transparent;
+border-radius: 50%;
+border: 1px solid var(--color-primary-dark);
+cursor: pointer;
+
+}
+
+.carousel-button:hover {
+background-color: var(--color-primary-dark);
+fill: var(--color-primary-dark);
+
+}
+
+
+/* Contact section */
+.contact-section {
+  padding-bottom: 96px;
+}
+
+.contact-container {
+display: flex;
+gap: 32px;
+  }
+
   .contact-title {
   margin-bottom: 16px;
   }
+.contact-map {
+  flex-shrink: 0;
+  border: none;
+  border-radius: 16px;
+}
 
 
 /* Footer */
+.footer {
+padding: 32px 0;
+}
+
+.footer-container {
+display: flex;
+gap: 20px;
+}
+
+.footer-nav,
+.footer-address {
+display: flex;
+flex-basis: 50%;
+gap: 20px;
+}
+
+.footer-logo,
+.footer-menu {
+flex-grow: 1;
+}
+
+.address-lis,
+.address-info {
+flex-grow: 1;
+}
+
 .address-link {
 color: var(--color-primary-light);
 font-size: 16px;
@@ -321,8 +421,17 @@ text-decoration: none;
 
 .address-link:hover {
 color: var(--color-brand-normal);
+}
+
+.address-icon {
+fill: var(--color-primary-light);
 
 }
+
+.address-icon:hover {
+fill: var(--color-brand-normal);
+}
+
 .address-copyright {
   font-size: 14px;
 }
