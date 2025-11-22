@@ -13,11 +13,6 @@
   );
   border-radius: 16px;
   overflow: hidden;
-  transition: transform 0.3s;
-
-  &:hover {
-    transform: scale(1.05);
-  }
 
   &__image {
     position: absolute;
@@ -29,11 +24,10 @@
   }
 
   &__title {
-  font-size: 24px;
-  font-weight: 600;
-  color: var(--color-primary-light);
-}
-
+    font-size: 24px;
+    font-weight: 600;
+    color: var(--color-primary-light);
+  }
 
   &__text {
     font-size: 14px;
@@ -41,4 +35,3 @@
     color: var(--color-primary-light);
   }
 }
-
